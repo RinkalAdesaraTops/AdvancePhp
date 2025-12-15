@@ -9,6 +9,7 @@ class CategoryController{
         $data = $this->catmodel->dispAll('category');
         include './views/category/index.php';
     }
+    
     public function disp(){
         include './views/Dashboard/index.php';
 
