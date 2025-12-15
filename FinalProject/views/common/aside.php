@@ -40,7 +40,7 @@
                 
               </li>
               <li class="nav-item">
-                <a href="category.php" class="nav-link">
+                <a href="index.php?action=disp" class="nav-link">
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Category</p>
                 </a>
