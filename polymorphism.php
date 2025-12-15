@@ -1,7 +1,7 @@
 <?php
 class Manager
 {
-    //method overriding
+    //method overriding- runtime polymorphism
     public function __construct()
     {
         echo '<br>Parent class called..';

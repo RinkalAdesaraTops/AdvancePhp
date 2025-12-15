@@ -1,0 +1,24 @@
+<?php
+require_once '../config/Database.php';
+class CategoryModel
+{
+    public function __construct()
+    {
+        $this->conn = Database::connect();
+    }
+    public function dispAll($table)
+    {
+        return $this->conn->query("SELECT * from $table");
+    }
+    public function insData($tbl, $name)
+    {
+        return $this->conn->query("INSERT INTO $tbl(`catid`,`name`) VALUES('','$name')");
+    }
+    public function delData($tbl, $id)
+    {
+        return $this->conn->query("DELETE FROM $tbl where catid = ".$id);
+    }
+}
+
+
+?>
