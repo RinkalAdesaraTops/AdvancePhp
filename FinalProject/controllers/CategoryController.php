@@ -9,10 +9,13 @@ class CategoryController{
         $data = $this->catmodel->dispAll('category');
         include './views/category/index.php';
     }
-    
-    public function disp(){
-        include './views/Dashboard/index.php';
 
+    public function disp(){
+        include './views/Dashboard/index.php';       
+    }
+    public function add(){
+        $data = $this->catmodel->insData("category",$_POST['name']);
+        $this->index();
     }
 }
 ?>
