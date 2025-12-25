@@ -45,6 +45,12 @@
                   <p>Category</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="index.php?action=subdisp" class="nav-link">
+                  <i class="nav-icon bi bi-palette"></i>
+                  <p>Subcategory</p>
+                </a>
+              </li>
               
             </ul>
             <!--end::Sidebar Menu-->
