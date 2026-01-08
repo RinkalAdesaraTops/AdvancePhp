@@ -12,11 +12,15 @@ class SubcategoryModel
     }
     public function insData($tbl, $cid,$name)
     {
-        return $this->conn->query("INSERT INTO $tbl(`subcatid`,`catid`,`name`) VALUES('',$cid,'$name')");
+        return $this->conn->query("INSERT INTO $tbl(`subcatid`,`catid`,`subcatname`) VALUES('',$cid,'$name')");
     }
     public function delData($tbl, $id)
     {
         return $this->conn->query("DELETE FROM $tbl where subcatid = ".$id);
+    }
+     public function dispCatWiseData(){
+        return $this->conn->query("SELECT subcategory.subcatid,subcategory.subcatname,category.name FROM subcategory JOIN category ON subcategory.catid=category.catid");
+        
     }
 }
 

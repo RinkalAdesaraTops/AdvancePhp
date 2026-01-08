@@ -1,6 +1,8 @@
 <?php
 include('./views/common/header.php');
 include('./views/common/aside.php');
+
+
 ?>
 <main class="app-main">
       <!--begin::App Content Header-->
@@ -48,15 +50,20 @@ include('./views/common/aside.php');
                                           <div class="card-body">
                                                 <div class="mb-3">
                                                       <label for="exampleInputEmail1" class="form-label">Category
-                                                            Name:</label>
-                                                      <input type="text" name="catid" class="form-control"
-                                                            id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                            :</label>
+                                                      <select name="catid" class="form-control">
+                                                            <option value="">--Select Category--</option>
+                                                            <?php while ($row = mysqli_fetch_assoc($catdata)) { ?>
+                                                                  <option value="<?= $row['catid'] ?>"><?= $row['name'] ?>
+                                                                  </option>
+                                                            <?php } ?>
+                                                      </select>
 
                                                 </div>
                                                 <div class="mb-3">
                                                       <label for="exampleInputEmail1" class="form-label">Subcategory
                                                             Name:</label>
-                                                      <input type="text" name="name" class="form-control"
+                                                      <input type="text" name="subcatname" class="form-control"
                                                             id="exampleInputEmail1" aria-describedby="emailHelp" />
 
                                                 </div>
@@ -94,14 +101,21 @@ include('./views/common/aside.php');
                                                       </tr>
                                                 </thead>
                                                 <tbody>
-                                                      <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+                                                      <?php
+                                                      while ($row = mysqli_fetch_assoc($res)) {
+
+                                                            
+                                                            ?>
+
                                                             <tr>
                                                                   <td><?= $row['subcatid'] ?></td>
-                                                                  <td><?= $row['catid'] ?></td>
+
                                                                   <td><?= $row['name'] ?></td>
+
+                                                                  <td><?= $row['subcatname'] ?></td>
                                                                   <td>
                                                                         <a href="#" class="btn btn-primary">Edit</a>
-                                                                        <a href="index.php?action=subdelete&id=<?= $row['catid'] ?>"
+                                                                        <a href="index.php?action=subdelete&id=<?= $row['subcatid'] ?>"
                                                                               class="btn btn-danger">Delete</a>
                                                                   </td>
                                                             </tr>

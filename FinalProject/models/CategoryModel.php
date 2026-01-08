@@ -18,6 +18,12 @@ class CategoryModel
     {
         return $this->conn->query("DELETE FROM $tbl where catid = ".$id);
     }
+    public function editData($tbl, $id){
+        return $this->conn->query("SELECT * from $tbl where catid=".$id);
+    }
+    public function updData($tbl,$data){
+        return $this->conn->query("UPDATE $tbl set `name`='$data[name]' where catid=".$data['catid']);
+    }
 }
 
 
